@@ -27,7 +27,8 @@ echo
 echo "⭐ Searching for installed CUDA"
 echo
 # Recover the CUDA version using nvcc
-CUDA_VERSION=`nvcc --version | grep release | sed 's/.* release //' | sed 's/, .*//'`
+# CUDA_VERSION=`nvcc --version | grep release | sed 's/.* release //' | sed 's/, .*//'`
+CUDA_VERSION=11.8
 CUDA_MAJOR=`echo ${CUDA_VERSION} | sed 's/\..*//'`
 CUDA_MINOR=`echo ${CUDA_VERSION} | sed 's/.*\.//'`
 
