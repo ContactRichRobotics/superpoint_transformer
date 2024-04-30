@@ -199,4 +199,5 @@ if __name__ == "__main__":
             _data = pickle.load(f)
 
         superpoint_data = spt.gen_superpoint(_data["points"], _data["colors"], np.zeros_like(_data["points"]), vis=vis)
-        pass
+        print(f"Points: {_data['points'].shape[0]}, Superpoints: {superpoint_data['pos'].shape[0]}")
+        visualize_superpoint(superpoint_data)

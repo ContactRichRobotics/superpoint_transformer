@@ -127,11 +127,11 @@ pre_transform:
     - transform: DataTo
       params:
         device: 'cuda'
-    - transform: GridSampling3D  # might OOM on CUDA if voxel and GPU memory too small
-      params:
-        size: ${datamodule.voxel}
-        hist_key: 'y'
-        hist_size: ${eval:'${datamodule.num_classes} + 1'}
+    # - transform: GridSampling3D  # might OOM on CUDA if voxel and GPU memory too small
+    #   params:
+    #     size: ${datamodule.voxel}
+    #     hist_key: 'y'
+    #     hist_size: ${eval:'${datamodule.num_classes} + 1'}
     - transform: KNN
       params:
         k: ${datamodule.knn}
